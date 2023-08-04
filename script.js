@@ -1,20 +1,19 @@
-const max = 3;
-let a;
+const maxValue = 3;
+let randomId;
 
-function generate() {
-  const max = document.getElementById('generate').value;
-  generateButtons(max);
-  randomizate(max);
+function numberOfButtons() {
+  const maxValue = document.getElementById('noOfButton').value;
+  generateButtons(maxValue);
+  getRandomNumber(maxValue);
 }
 
-function randomizate(max) {
-  const min = 1;
-  a = Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandomNumber(maxValue) {
+  randomId = Math.floor(Math.random() * (Math.ceil(maxValue)));
 }
 
 function getRandomInt() {
   const clickedButtonId = event.target.id;
-  if (clickedButtonId == a.toString()) {
+  if (clickedButtonId == randomId.toString()) {
     document.getElementById(clickedButtonId).className = "btn-success";
     document.getElementById('rezult').innerHTML = "You win!";
   } else {
@@ -24,11 +23,11 @@ function getRandomInt() {
 }
 
 function generateButtons(max) {
-  for (let i = 1; i <= max; i++) {
+  for (let newId = 1; newId <= max; newId++) {
     let newBtn = document.createElement('button');
     newBtn.type = "button";
     newBtn.innerText = "Click me";
-    newBtn.id = i;
+    newBtn.id = newId;
     newBtn.className = "btn-primary";
     newBtn.onclick = getRandomInt;
     document.querySelector('#button-container').appendChild(newBtn);
