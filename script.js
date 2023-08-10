@@ -4,11 +4,11 @@ let randomId;
 function numberOfButtons() {
   const maxValue = document.getElementById('noOfButton').value;
   generateButtons(maxValue);
-  getRandomNumber(maxValue);
+  randomId = getRandomNumber(maxValue);
 }
 
 function getRandomNumber(maxValue) {
-  randomId = Math.floor(Math.random() * (Math.ceil(maxValue)));
+  return Math.ceil(Math.random() * maxValue);
 }
 
 function getRandomInt() {
