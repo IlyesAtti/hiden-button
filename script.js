@@ -5,6 +5,7 @@ function numberOfButtons() {
   const maxValue = document.getElementById('noOfButton').value;
   generateButtons(maxValue);
   randomId = getRandomNumber(maxValue);
+  return (randomId);
 }
 
 function getRandomNumber(maxValue) {
